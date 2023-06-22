@@ -38,7 +38,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use(authRouter);
+app.use('/auth',authRouter);
 // viet middleware chinh sua res
 app.use((req: any, res: any, next: any) => {
         if (req.isAuthenticated()) {

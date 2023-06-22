@@ -1,5 +1,12 @@
 export class AuthController {
     static getFormLogin(req, res) {
-        res.render('login')
+       try{
+        if(req.isAuthenticated()){
+            return  res.redirect('/book')
+          }
+          res.render('login')
+       }catch(err){
+        res.send(err.message)
+       }
     }
 }
